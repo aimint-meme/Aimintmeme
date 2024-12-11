@@ -1,0 +1,594 @@
+body {
+  overflow: auto;
+}
+
+@font-face {
+  font-family: 'Sora';
+  src: url('/fonts/Sora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  font-family: "Sora" !important;
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/* .bgImg{
+  background: url('../public/bg1.png') lightgray 50% / cover no-repeat;
+} */
+.noImg {
+  background: none;
+}
+
+.mdtext-gradient {
+  background: linear-gradient(270deg,
+      #5a58f2 4.92%,
+      #5be2ff 48.69%,
+      #d043d0 90.39%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-xxs {
+  font-size: 7.73px;
+}
+
+.text-gradient {
+  background: linear-gradient(268deg,
+      #ffc300 -4.45%,
+      #ff3e80 27.92%,
+      #5a58f2 83.85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-box {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #222, #222), linear-gradient(90deg, #8F41E9, #578AEF);
+}
+
+.bg-thread {
+  background-color: none !important;
+}
+
+.upload-gradient {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20.351px;
+  border: 5px solid var(--, #5a58f2);
+  background: linear-gradient(180deg, #5be1ff 0%, #4200b5 100%);
+}
+
+.arrow-box {
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(to right, #5A58F2, #5A58F2), linear-gradient(90deg, #10F4B1, #FF3E80);
+}
+
+.tab-border {
+  border-radius: var(--Font-Styles-Body-3-Line-height, 20px);
+  background: var(--drak-hover, #1a1425);
+  box-shadow:
+    0px 32px 419px 0px rgba(0, 0, 0, 0.06),
+    0px 11.681px 152.942px 0px rgba(0, 0, 0, 0.08),
+    0px 5.671px 74.25px 0px rgba(0, 0, 0, 0.1),
+    0px 2.78px 36.399px 0px rgba(0, 0, 0, 0.12),
+    0px 1.099px 14.392px 0px rgba(0, 0, 0, 0.18);
+}
+
+.container1 {
+  overflow: hidden;
+  position: relative;
+  width: 100vw !important;
+  /* 容器宽度 */
+  height: 66px;
+  z-index: 10;
+}
+
+.container {
+  /* 容器宽度 */
+  height: 66px;
+  z-index: 10;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  /* width: 150%; */
+  /* 设置比容器宽度多的长度以支持滚动 */
+  animation: scroll 200s linear infinite;
+  /* 调整时长以改变滚动速度 */
+}
+
+.scrolling-wrapper-quick2 {
+  display: flex;
+  /* width: 150%; */
+  /* 设置比容器宽度多的长度以支持滚动 */
+  animation: scroll 20s linear infinite;
+  /* 调整时长以改变滚动速度 */
+}
+
+.scrolling-wrapper-quick {
+  display: flex;
+  /* width: 150%; */
+  /* 设置比容器宽度多的长度以支持滚动 */
+  animation-name: scrollQuick1, scrollQuick2;
+  animation-duration: 10s, 10s;
+  animation-delay: 0s, 5s;
+  animation-iteration-count: infinite, infinite;
+  animation-timing-function: linear, linear;
+}
+
+.box {
+  flex: 0 0 auto;
+  /* 防止自动伸缩 */
+  width: 100px;
+  /* 每个div的宽度 */
+  margin-right: 10px;
+  /* 间隔 */
+  line-height: 66px;
+  /* 行高与div大小相同 */
+  text-align: center;
+  /* 文字居中 */
+}
+
+/* 鼠标悬停时停止动画 */
+.container1:hover .scrolling-wrapper {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100%);
+    /* 假设有三个div，这里应该是总宽度的一半 */
+  }
+}
+
+@keyframes scrollQuick1 {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+    /* 假设有三个div，这里应该是总宽度的一半 */
+  }
+}
+
+@keyframes scrollQuick2 {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(-100%);
+    /* 假设有三个div，这里应该是总宽度的一半 */
+  }
+}
+
+:root {
+  --border-width: 4px;
+}
+
+/* 定义盒子区域的宽高 包含边框所占区域 */
+.d2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* 为了让内容区域不被边框覆盖 设置等宽的padding */
+  /* padding: var(--border-width); */
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+  /* 隐藏超出的部分 这很重要 */
+  overflow: hidden;
+}
+
+/* 利用伪元素::after 定义盒子内容区域 */
+.d2::after {
+  content: "";
+  position: absolute;
+  /* 使用css变量定位内容区域位置 */
+  left: var(--border-width);
+  top: var(--border-width);
+  /* 根据css变量设置内容区域的宽高 */
+  width: calc(100% - var(--border-width) * 2);
+  height: calc(100% - var(--border-width) * 2);
+  background: #1A1425;
+  /* 设置元素层级小于父级元素 使父元素的内容能够显示在该内容区域之上 */
+  z-index: -1;
+  /* 设置圆角 要比父元素的圆角小一些 */
+  border-radius: 6px;
+}
+
+/* 利用伪元素::before 定义盒子边框区域 */
+.d2::before {
+  content: "";
+  position: absolute;
+  /* 利用定位和位移将元素的中心点定位到父元素的中心点 */
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: calc(150% + var(--border-width) * 2);
+  padding-top: calc(150% + var(--border-width) * 2);
+  /* height: 505px; */
+  background: linear-gradient(
+      /* -45deg, */
+      180deg,
+      #5A58F2 0%,
+      #D043D0 100%);
+  /* 设置该元素的层级 要小于用伪元素::after 定义的盒子内容区域 */
+  z-index: -2;
+  /* 利用动画旋转该元素 */
+  animation: rotate2 1.5s linear infinite;
+  /* 设置旋转的圆心为元素的中心点 */
+  transform-origin: 50% 50%;
+}
+
+/* 声明旋转动画 旋转的同时 保持元素位置不变 */
+@keyframes rotate2 {
+  0% {
+    transform: translateY(-50%) translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-50%) translateX(-50%) rotate(360deg);
+  }
+}
+
+.progress-container {
+  width: calc(100% - 30px);
+  background-color: #F1F2F6;
+  position: relative;
+  margin: 10px 15px;
+  height: 8px;
+  align-items: center;
+  gap: 13px;
+  box-sizing: content-box;
+  border-radius: 22.72px;
+  border: none;
+
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #5A58F2 0%, #FF3E80 47.12%, #FFC300 130.43%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 22.72px;
+}
+
+
+.progress-icon {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  /*调整图标容器的宽度 */
+  height: 40px;
+  z-index: 20;
+  /*调整图标容器的高度*/
+  border-radius: 50%;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.text-container {
+  width: 80px;
+  /* 设置容器的宽度 */
+  white-space: nowrap;
+  /* 禁止文本换行 */
+  overflow: hidden;
+  /* 隐藏超出容器的内容 */
+  text-overflow: ellipsis;
+  /* 使用省略号表示被截断的内容 */
+}
+
+.alert-box {
+  position: fixed;
+  width: 100%;
+  right: 0px;
+  bottom: 0px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  /* 确保提示框在其他内容之上 */
+}
+
+.pc-alert-box {
+  position: fixed;
+  width: 400px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  /* 确保提示框在其他内容之上 */
+}
+
+.alert-close-btn {
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.animate-move {
+  transition: transform 0.1s;
+}
+
+.shake {
+  animation: shake 0.3s infinite;
+  /* Shake animation */
+}
+
+.shakeSlow {
+  animation: shake 5s infinite;
+  /* Shake animation */
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  75% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.height-calc {
+  height: calc(100vh - 295px);
+}
+
+.table-height-calc {
+  height: calc(100vh - 260px) !important;
+}
+
+
+.wallet-adapter-button-trigger {
+  background-color: #5a58f2 !important;
+  /* border-radius: 10px !important; */
+}
+
+.custom-wallet-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-wallet-button .wallet-adapter-button {
+  width: 28px;
+  height: 25px;
+  padding: 0px;
+  font-size: 0;
+  /* 这将隐藏文字，但保留按钮的布局空间 */
+  /* 或者使用以下方式之一来完全移除文字占据的空间 */
+  text-indent: -9999px;
+  /* 将文字移出可视区域 */
+  /* 或者 */
+  position: relative;
+  /* 确保伪元素相对于按钮定位 */
+  /* 然后使用伪元素来覆盖或替换文字 */
+  /* ::before 和 ::after 伪元素的样式可以在这里添加 */
+}
+
+.custom-wallet-button .wallet-adapter-button-trigger {
+  background-color: transparent !important;
+  background: url('../public/Group 61.svg') lightgray 50% / cover no-repeat;
+}
+
+.custom-wallet-button .wallet-adapter-button .wallet-adapter-button-start-icon {
+  display: none;
+}
+
+:global(.ant-message .ant-message-notice-wrapper .ant-message-notice-content) {
+  background: #5F6DFF;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.ant-message .ant-message-notice-wrapper .ant-message-notice-content) {
+  background: #0f1ecb !important;
+}
+
+
+.ant-message-custom-content.ant-message-success {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-right-width {
+  width: calc(100% - 110px);
+}
+
+.flex-right-width {
+  width: calc(100% - 152px);
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 钱包弹窗关闭图标隐藏 */
+.connectWallet .appearance-none {
+  display: none;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 575.98px) {
+  /* iframe {  
+    height: 392px;  
+  }   */
+}
+
+.buyCardKline iframe {
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  .buyCardKline iframe {
+    display: flex !important;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 20%;
+  /* 初始位置设为父容器的垂直中心 */
+  left: 50%;
+  /* 初始位置设为父容器的水平中心 */
+  transform: translate(-50%, -50%);
+  /* 使用transform属性调整至完全居中 */
+  color: #5a58f2;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.holder-mobile-h {
+  height: calc(100vh - 275px);
+}
+
+.clamp-lines-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* body>div:not([data-overlay-container="true"]) {
+  font-size: 0px!important;
+} */
+
+.copy-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  border: 1px solid #8D8D8D;
+}
+
+.text-box {
+  padding: 5px;
+  width: 116px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-box-small {
+  padding: 1px;
+  width: 116px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.copy-button {
+  padding: 5px 5px 5px 0px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.copy-container.copied {
+  border: 1px solid #5A58F2;
+}
+
+.copy-button:hover {
+  /* background-color: #0056b3; */
+}
+
+.copy-button.copied:hover {
+  /* background-color: #218838; */
+}
+
+/* 两侧淡出阴影的伪元素 */
+.welcome-marquee-container::before,
+.welcome-marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1; /* 确保伪元素在内容之下 */
+  pointer-events: none; /* 确保伪元素不影响鼠标事件 */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); /* 左侧阴影渐变 */
+  /* 注意：为了右侧阴影，需要为::after设置不同的渐变方向 */
+}
+ 
+.welcome-marquee-container::after {
+  right: 0;
+  left: auto; /* 确保阴影在右侧 */
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)); /* 右侧阴影渐变 */
+}
+ 
+/* 确保伪元素覆盖整个容器的高度，并根据需要调整渐变 */
+.welcome-marquee-container::before {
+  width: 20%; /* 左侧阴影的宽度，可以根据需要调整 */
+  left: 0; /* 左侧阴影的位置 */
+}
+ 
+.welcome-marquee-container::after {
+  width: 20%; /* 右侧阴影的宽度，与左侧相同或根据需要调整 */
+}
