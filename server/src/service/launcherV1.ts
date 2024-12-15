@@ -25,8 +25,6 @@ let keys = FROM_SECRET_KEY.split(',').map(item => parseInt(item, 10));
 
 // dS8oFvVzvr3BosefasMFG3EJAKxDCAxSuEkwMKTboTW
 const owner: Keypair = Keypair.fromSecretKey(Uint8Array.from(keys))
-// 4cRDLBPxKrhV2nBuR12wqu2qpRJHCHcvMNuTVmYaKAmC
-//const owner: Keypair = Keypair.fromSecretKey(Uint8Array.from([120,206,170,122,219,152,222,149,21,31,111,68,44,40,1,170,94,252,254,144,90,167,200,169,13,213,202,65,234,1,31,189,53,165,196,48,183,200,100,32,50,39,207,191,48,155,49,46,177,220,110,67,152,16,20,59,8,234,190,242,143,202,131,135]))
 const signer: Signer = owner
 const txVersion = TxVersion.V0
 
